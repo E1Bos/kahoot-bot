@@ -1,5 +1,4 @@
-import random
-import time
+import random, time
 import kahootDefs as kDefs
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -22,10 +21,8 @@ while type(kahootPin) != type(0):
 
 URL = 'https://www.kahoot.it/'
 
-
 def switchTab(tabID):
     driver.switch_to.window(allTabs[tabID])
-
 
 with open('usernames.txt', 'r') as file:
     usernameList = [line.replace('\n', '') for line in file]
@@ -48,7 +45,6 @@ allTabs = driver.window_handles
 class badPin(Exception):
     pass
 
-
 # Start Bots
 try:
     # ENTER PIN
@@ -66,9 +62,7 @@ try:
                 break
 
         print(f'BOT ID {tabID + 1}\t::\tStarting')
-
     print()
-
     # ENTER USERNAME
     botUsernames = []
     for tabID in range(totalKahootBots):
@@ -126,7 +120,6 @@ while True:
             switchTab(0)
             tempPAGE = driver.current_url
             print()
-
 
         elif driver.current_url == "https://kahoot.it/v2/ranking":
             print(f'Game Finshed. Closing All Bots.')
