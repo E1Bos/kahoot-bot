@@ -1,7 +1,6 @@
 import random
 import string
 
-
 def findViableAnswers(driver):
     viableAnswers = []
     try:
@@ -41,11 +40,3 @@ def pickAnswer(viableAnswers):
         circleButton.click()
     elif answerChoice == 'Square':
         squareButton.click()
-
-def genRandomUsernames(nameLen):
-    nameString = ''
-    for i in range(nameLen):
-        letterList = list(string.ascii_letters)
-        random.shuffle(letterList)
-        nameString += letterList.pop()
-    return nameString
